@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
+//environmental variable -> accessible outside of code (not a local host)
 var bodyParser = require("body-parser");
 //translate data into json
 app.use(bodyParser.json());
@@ -33,7 +34,8 @@ app.post("/contact", (req, res) => {
     var myData = new User(req.body);
     myData.save()
     .then(item => {
-    res.send("item saved to database");
+    //res.send("item saved to database");
+    res.sendFile(__dirname + "contact.html");
     })
     .catch(err => {
     res.status(400).send("unable to save to database");
