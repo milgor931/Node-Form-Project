@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 //translate data into json
 app.use(bodyParser.json());
