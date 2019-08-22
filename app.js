@@ -35,7 +35,7 @@ app.post("/contact", (req, res) => {
     myData.save()
     .then(item => {
     //res.send("item saved to database");
-    res.sendFile(__dirname + "contact.html");
+    res.sendFile(__dirname + "/contact.html");
     })
     .catch(err => {
     res.status(400).send("unable to save to database");
